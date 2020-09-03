@@ -8,13 +8,14 @@
 
 CSV.foreach(Rails.root.join('lib/CCPS.csv'), headers: true) do |row|
 
-
+    # convert job page column into boolean
     if row[4] == "Y"
         row[4] = true
     else
         row[4] = false
     end
 
+    # convert open_to_spec column into boolean
     if row[11] == "Y"
         row[11] = true
     else
