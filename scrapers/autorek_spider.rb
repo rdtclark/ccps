@@ -32,7 +32,7 @@ class AutorekSpider < Kimurai::Base
             #     details_url: full_details_url
             # }
 
-            Job.create(
+            Job.where(title: title)first_or_create(
                 title: title,
                 location: location,
                 details_url: full_details_url
