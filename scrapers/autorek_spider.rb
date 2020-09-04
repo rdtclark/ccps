@@ -9,9 +9,7 @@ class AutorekSpider < Kimurai::Base
         disable_images: true
     }
 
-    attr_accessor :jobs
     def parse(response, url:, data: {})
-        @jobs = []
 
         jobs_count = response.css('div.careers-table__row').count
 
@@ -24,15 +22,10 @@ class AutorekSpider < Kimurai::Base
             location = element.css('p').text.strip
 
             details_url = element.css('a.text-link').first["href"]
+
             full_details_url = "https://autorek.com" + details_url
 
-            # job = {
-            #     title: title,
-            #     location: location,
-            #     details_url: full_details_url
-            # }
-
-            Job.where(title: title)first_or_create(
+            Job.where(title: title).first_or_create(
                 title: title,
                 location: location,
                 details_url: full_details_url
