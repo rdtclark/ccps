@@ -6,21 +6,21 @@ class PartnersContainer extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            info: []
+            org_info: []
         }
     }
 
     componentDidMount(){
-        const url = 'http://localhost:3000/organisations'
-        fetch(url)
+        const org_url = 'http://localhost:3000/organisations'
+        fetch(org_url)
         .then(res => res.json())
-        .then(data => this.setState({info: data}))
+        .then(data => this.setState({org_info: data}))
     }
 
     render() {
         return(
             <div>
-                <OrganisationList info={this.state.info}/>
+                <OrganisationList org_info={this.state.org_info}/>
             </div>
         )
     }

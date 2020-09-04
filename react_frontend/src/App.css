@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+
+.partners{
+  float: left;
+  padding: 100px;
+}
+
+.jerbs{
+  float: right;
+  padding: 100px;
+}
