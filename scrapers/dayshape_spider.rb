@@ -24,8 +24,10 @@ class DayshapeSpider < Kimurai::Base
 
       details_url = element.css('a').first["href"]
 
-      Job.where(organisation_id: 12, title: title).first_or_create(
-        organisation_id: 12,
+      org_id = Organisation.where(organisation_name: 'Airts').first.id
+
+      Job.where(organisation_id: org_id, title: title).first_or_create(
+        organisation_id: org_id,
         title: title,
         location: location,
         details_url: details_url

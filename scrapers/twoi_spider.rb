@@ -31,8 +31,11 @@ class TwoiSpider < Kimurai::Base
 
       full_details_url = "https://2itesting.com" + details_url
 
-      Job.where(organisation_id: 2, title: title).first_or_create(
-        organisation_id: 2,
+      org_id = Organisation.where(organisation_name: '2i Testing').first.id
+
+
+      Job.where(organisation_id: org_id, title: title).first_or_create(
+        organisation_id: org_id,
         title: title,
         location: location,
         details_url: full_details_url

@@ -25,8 +25,10 @@ class AutorekSpider < Kimurai::Base
 
             full_details_url = "https://autorek.com" + details_url
 
-            Job.where(organisation_id: 23, title: title).first_or_create(
-                organisation_id: 23,
+            org_id = Organisation.where(organisation_name: 'AutoRek').first.id
+
+            Job.where(organisation_id: org_id, title: title).first_or_create(
+                organisation_id: org_id,
                 title: title,
                 location: location,
                 details_url: full_details_url
