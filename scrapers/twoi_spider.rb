@@ -22,7 +22,6 @@ class TwoiSpider < Kimurai::Base
 
       if element.css('span.job-label')[1].text.strip == "City:"
         location = element.css('div.job-info')[1].text.strip
-        binding.pry
         location.slice! "City: "
       else
         location = nil
@@ -32,8 +31,8 @@ class TwoiSpider < Kimurai::Base
 
       full_details_url = "https://2itesting.com" + details_url
 
-      Job.where(title: title).first_or_create(
-        # organisation_id: 1,
+      Job.where(organisation_id: 2, title: title).first_or_create(
+        organisation_id: 2,
         title: title,
         location: location,
         details_url: full_details_url
