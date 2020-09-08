@@ -33,7 +33,7 @@ class DeltadnaSpider < Kimurai::Base
                     organisation_id: org_id,
                     title: title,
                     location: location,
-                    details_url: details_url
+                    details_url: full_details_url
                 )
 
             else

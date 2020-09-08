@@ -9,7 +9,7 @@ class TescoSpider < Kimurai::Base
         disable_images: true
     }
 
-    
+    #start_url link had to be updated as tesco bank used an iframe
 
     def parse(response, url:, data: {})
 
