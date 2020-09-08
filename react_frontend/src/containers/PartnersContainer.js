@@ -1,7 +1,7 @@
 import React from 'react';
 import OrganisationList from '../components/OrganisationList';
 import Table from 'react-bootstrap/Table';
-//import './PartnersContainer.css';
+import './PartnersContainer.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faPooStorm, faInfo } from '@fortawesome/free-solid-svg-icons';
@@ -48,11 +48,11 @@ class PartnersContainer extends React.Component {
     render() {
         return(
             <>
-                <div className="scroll">
+                <div>
                     <h2>
                         CodeClan_ Partners
                     </h2>
-                    <Table hover responsive>
+                    <Table hover>
                         <thead>
                             <tr>
                                 <th>Organisation</th>
