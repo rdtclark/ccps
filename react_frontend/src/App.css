@@ -40,12 +40,24 @@
 
 /* // ^^^^ everything above is default from react */
 
+.container {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+
 .partners{
-  float: left;
-  padding: 100px;
+  flex: 2;
+  overflow-y: scroll;
+  justify-content: left;
+  align-items: left;
+  padding: 10px 100px 10px 10px;
 }
 
 .jerbs{
-  float: right;
-  padding: 100px;
+  flex: 1;
+  display: flex;
+  justify-content: right;
+  align-items: right;
+  padding: 10px 10px 100px 10px;
 }

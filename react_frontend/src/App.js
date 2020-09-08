@@ -5,7 +5,7 @@ import JobsContainer from './containers/JobsContainer';
 
 function App() {
   return (
-    <div>
+    <div className="container">
       <div className="partners">
       <PartnersContainer/>
       </div>
