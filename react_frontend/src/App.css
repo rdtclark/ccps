@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,7 +35,10 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
+
+
+/* // ^^^^ everything above is default from react */
 
 .partners{
   float: left;
