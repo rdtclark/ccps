@@ -36,6 +36,7 @@ class PartnersContainer extends React.Component {
 
             return (
                 <tr key={id} className="table">
+
                     <th className="col-width"><a href={homepage}>{organisation_name}</a></th>
                     <td id="tbody-center"><a href={about}>{abouticon}</a></td>
                     <td id="tbody-center"><a href={job_page_url}>{job_url_icon}</a></td>

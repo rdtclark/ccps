@@ -3,15 +3,20 @@ import Job from './Job';
 
 const JobList = ({jobs}) => {
 
-    const all_jobs = jobs.map(jobs => {
+    let all_tags = []
+    const all_jobs = jobs.map(job => {
+        
+        const tags = job.title.match(/\S+\s*/g);
+        all_tags.push(tags);
 
         return(
             <Job
-            title={jobs.title}
-            job_link={jobs.details_url}
+            title={job.title}
+            job_link={job.details_url}
             />
-        )
+        ) 
     })
+    console.log(all_tags.flat());
 
     return(
 
