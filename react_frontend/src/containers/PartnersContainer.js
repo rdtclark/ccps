@@ -1,10 +1,10 @@
 import React from 'react';
 import OrganisationList from '../components/OrganisationList';
-import Table from 'react-bootstrap/Table';
 import './PartnersContainer.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import { faPooStorm, faInfo } from '@fortawesome/free-solid-svg-icons';
+import { faPooStorm, faInfo, faBriefcase, faCheck, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
+import Table from 'react-bootstrap/Table';
 
 
 
@@ -24,22 +24,19 @@ class PartnersContainer extends React.Component {
         .then(data => this.setState({org_info: data}))
     }
 
-
+    
 
     renderTableData() {
-
-
         return this.state.org_info.map((org, index) => {
             const {id, organisation_name, homepage, about, job_page_url, linkedin, open_to_spec_app} = org
 
             return (
-                
                 <tr key={id} className="table">
                     <th className="col-width"><a href={homepage}>{organisation_name}</a></th>
                     <td id="tbody-center"><a href={about}><FontAwesomeIcon icon={ faInfo }></FontAwesomeIcon></a></td>
-                    <td id="tbody-center"><a href={job_page_url}><FontAwesomeIcon icon={ faPooStorm }></FontAwesomeIcon></a></td>
+                    <td id="tbody-center"><a href={job_page_url}><FontAwesomeIcon icon={ faBriefcase, faPooStorm }></FontAwesomeIcon></a></td>
                     <td id="tbody-center"><a href={linkedin}><FontAwesomeIcon icon={ faLinkedin }></FontAwesomeIcon></a></td>
-                    <td>{open_to_spec_app}</td>
+                    <td id="tbody-center">{open_to_spec_app ? <FontAwesomeIcon icon={ faCheck }></FontAwesomeIcon> : <FontAwesomeIcon icon={ faTimesCircle }></FontAwesomeIcon>}</td>
                 </tr>
             )
         })

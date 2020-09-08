@@ -40,10 +40,12 @@
 
 /* // ^^^^ everything above is default from react */
 
+
+
 .container {
   display: flex;
   flex-direction: row;
-  height: 100vh;
+  height: 120vh;
 }
 
 .partners{
