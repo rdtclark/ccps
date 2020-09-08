@@ -12,6 +12,11 @@ before_action :set_org, only: [:show]
     render json: @org
   end
 
+  # def about
+  #   orgs = Organisation.with_about
+  #   render json: orgs
+  # end
+
   private
 
   def set_org
