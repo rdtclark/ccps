@@ -11,10 +11,14 @@ class AutorekSpider < Kimurai::Base
 
     def parse(response, url:, data: {})
 
+        # find the correct Organisation
+        org_id = Organisation.where(organisation_name: 'AutoRek').first.id
+        org = Organisation.find(org_id)
+
         jobs_count = response.css('div.careers-table__row').count
 
         returned_jobs = response.css('div.container')
-       
+        
         returned_jobs.css('div.careers-table__row').each do |element|
 
             title = element.css('h2.table__title').text.strip
@@ -25,14 +29,19 @@ class AutorekSpider < Kimurai::Base
 
             full_details_url = "https://autorek.com" + details_url
 
-            org_id = Organisation.where(organisation_name: 'AutoRek').first.id
-
             Job.where(organisation_id: org_id, title: title).first_or_create(
                 organisation_id: org_id,
                 title: title,
                 location: location,
                 details_url: full_details_url
             )
+        end
+
+        # update vacancies_listed at Organisation if no jobs listed
+        if jobs_count > 0
+            org.vacancies_listed = true
+        else
+            org.vacancies_listed = false
         end
     end
 end
