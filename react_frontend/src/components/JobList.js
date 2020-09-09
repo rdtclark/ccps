@@ -1,5 +1,7 @@
 import React from 'react';
 import Job from './Job';
+import Badge from 'react-bootstrap/Badge';
+
 
 const JobList = ({jobs}) => {
 
@@ -18,10 +20,12 @@ const JobList = ({jobs}) => {
     })
     console.log(all_tags.flat());
 
+
+
     return(
 
         <>
-        <h2>Current Jerbs</h2>
+        <h2>Current Jerbs <Badge pill variant="info">{all_jobs.length}</Badge></h2>
         <ul>{all_jobs}</ul>
         </>
     )
