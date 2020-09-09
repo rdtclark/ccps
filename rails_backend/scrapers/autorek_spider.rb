@@ -40,8 +40,12 @@ class AutorekSpider < Kimurai::Base
         # update vacancies_listed at Organisation if no jobs listed
         if jobs_count > 0
             org.vacancies_listed = true
+            org.save!
         else
             org.vacancies_listed = false
+            org.save!
+            org.vacancies_listed = false
+            org.save!
         end
     end
 end

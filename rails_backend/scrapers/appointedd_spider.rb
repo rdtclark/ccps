@@ -11,18 +11,21 @@ class AppointeddSpider < Kimurai::Base
 
     def parse(response, url:, data: {})
 
+        # find the correct Organisation
+        org_id = Organisation.where(organisation_name: 'Appointedd').first.id
+        org = Organisation.find(org_id)
+
         no_vacancies_message = "We’re not currently recruiting – thanks for checking. We’ll announce on social media when we open new roles."
 
+        # add job scraper here
+
+        # update vacancies_listed at Organisation if no jobs listed
         if response.css('h2 a').text.strip == no_vacancies_message
-            vacancies = false
+            org.vacancies_listed = false
+            org.save!
         else
-            vacancies = true
+            org.vacancies_listed = true
+            org.save!
         end
-
-        binding.pry
-
-        org_id = Organisation.where(organisation_name: 'Appointedd').first.id
-        
-
     end
 end
