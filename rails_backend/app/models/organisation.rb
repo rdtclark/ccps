@@ -15,7 +15,9 @@ class Organisation < ApplicationRecord
             "AutoRek",
             "Gecko Engage",
             "Tesco Bank",
-            "BBI Group"
+            "BBI Group",
+            "Bad Dinosaur",
+            "Deliveroo (formerly Cultivate Software Ltd)"
         ])
 
         orgs.each do |org|
