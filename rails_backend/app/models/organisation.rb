@@ -17,7 +17,8 @@ class Organisation < ApplicationRecord
             "Tesco Bank",
             "BBI Group",
             "Bad Dinosaur",
-            "Deliveroo (formerly Cultivate Software Ltd)"
+            "Deliveroo (formerly Cultivate Software Ltd)",
+            "80 Days"
         ])
 
         orgs.each do |org|
