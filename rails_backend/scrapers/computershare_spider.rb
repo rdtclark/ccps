@@ -11,27 +11,27 @@ class ComputershareSpider < Kimurai::Base
 
     def parse(response, url:, data: {})
 
+
         # find the correct Organisation
         org_id = Organisation.where(organisation_name: 'Computershare').first.id
         org = Organisation.find(org_id)
 
-        binding.pry
+        browser.refresh
+        response = browser.current_response
 
-        returned_jobs = response.css('ul#jobList')
+        returned_jobs = response.css('ul#jobList') 
 
         jobs_count = returned_jobs.css('li').count
         
         returned_jobs.css('li').each do |element|
 
-            
-
             title = element.css('div.multiline-data-container a').text.strip
 
-            location = element.css('p').text.strip
+            location = element.css('span.initial-locations').text.strip
 
-            details_url = element.css('a.text-link').first["href"]
+            details_url = element.css('span a')["href"]
 
-            #full_details_url = "" + details_url
+            full_details_url = "https://cpu.taleo.net/" + details_url
 
             Job.where(organisation_id: org_id, title: title).first_or_create(
                 organisation_id: org_id,
