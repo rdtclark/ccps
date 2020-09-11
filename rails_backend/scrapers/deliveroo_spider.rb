@@ -21,6 +21,8 @@ class DeliverooSpider < Kimurai::Base
 
         jobs_count = jobs.count
 
+        binding.pry
+
         jobs.drop(1).each do |element|
             
             title = element.css('h3').text.strip
