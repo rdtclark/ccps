@@ -9,6 +9,21 @@ class ComputershareSpider < Kimurai::Base
         disable_images: true
     }
 
+
+    # def scrape_page
+    #     doc = browser.current_response
+    #     returned_jobs = doc.css('table#jobs')
+    #     returned_jobs.css('li').each do |element|
+    #         title = element.css('div.multiline-data-container a').text.strip
+
+    #         location = element.css('span.initial-locations').text.strip
+
+    #         details_url = element.css('span a')["href"]
+    #     end
+
+    # end
+
+
     def parse(response, url:, data: {})
 
 
@@ -16,10 +31,13 @@ class ComputershareSpider < Kimurai::Base
         org_id = Organisation.where(organisation_name: 'Computershare').first.id
         org = Organisation.find(org_id)
 
+        binding.pry
+
         browser.refresh
+
         response = browser.current_response
 
-        returned_jobs = response.css('ul#jobList') 
+        returned_jobs = response.css('table#jobs') 
 
         jobs_count = returned_jobs.css('li').count
         

@@ -21,6 +21,8 @@ class AutorekSpider < Kimurai::Base
         
         returned_jobs.css('div.careers-table__row').each do |element|
 
+            binding.pry
+
             title = element.css('h2.table__title').text.strip
 
             location = element.css('p').text.strip

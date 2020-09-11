@@ -19,7 +19,9 @@ class Organisation < ApplicationRecord
             "Bad Dinosaur",
             "Deliveroo (formerly Cultivate Software Ltd)",
             "80 Days",
-            "Craneware"
+            "Craneware",
+            "Moon Collider (Kytheria.AI)",
+            "Dufrain"
         ])
 
         orgs.each do |org|
