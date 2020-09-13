@@ -4,18 +4,31 @@ require 'pry'
 class LinkedinSpider < Kimurai::Base
     @name = "linkedin_spider"
     @engine = :selenium_chrome
-    @start_urls = Organisation.linkedin_job_urls[0..20]
+    @start_urls = Organisation.linkedin_job_urls.sample(1)
     @config = {
         disable_images: true,
-        delay: 4..7
+        before_request: {
+            delay: 3..6
+        }
     }
 
     def parse(response, url:, data: {})
 
+        # grab the organisation name from the current URL
+        marker1 = "&id="
+        marker2 = "&redirect"
+        org_id = url[/#{marker1}(.*?)#{marker2}/m, 1]
+
+        binding.pry
+
+        # find the correct Organisation
+        org = Organisation.find(org_id)
+
         returned_jobs = response.css('ul.jobs-search__results-list')
+
+        jobs_count = returned_jobs.css('li').count
         
         returned_jobs.css('li').each do |element|
-
 
             title = element.css('h3').text.strip
 
@@ -29,6 +42,16 @@ class LinkedinSpider < Kimurai::Base
                 location: location,
                 details_url: details_url
             )
+        end
+
+        if jobs_count > 0
+            org.vacancies_listed = true
+            org.save!
+        else
+            org.vacancies_listed = false
+            org.save!
+            org.vacancies_listed = false
+            org.save!
         end
 
     end
