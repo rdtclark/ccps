@@ -19,8 +19,6 @@ class LinkedinSpider < Kimurai::Base
         marker2 = "&redirect"
         org_id = url[/#{marker1}(.*?)#{marker2}/m, 1]
 
-        binding.pry
-
         # find the correct Organisation
         org = Organisation.find(org_id)
 
