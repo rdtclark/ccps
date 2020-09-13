@@ -1,10 +1,17 @@
 require 'kimurai'
 require 'pry'
+require 'bundler'
+Bundler.require
+
+Kimurai.configure do |config|
+  config.selenium_chrome_path = ENV['SELENIUM_CHROME_PATH'].presence
+  config.chromedriver_path = ENV['CHROMEDRIVER_PATH'].presence
+end
 
 class LinkedinSpider < Kimurai::Base
     @name = "linkedin_spider"
     @engine = :selenium_chrome
-    @start_urls = Organisation.linkedin_job_urls.sample(1)
+    @start_urls = Organisation.linkedin_job_urls.sample(20)
     @config = {
         disable_images: true,
         before_request: {

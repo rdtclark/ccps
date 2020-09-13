@@ -6,30 +6,6 @@ class Organisation < ApplicationRecord
     scope :with_open_to_spec_app, -> { where.not(open_to_spec_app: [nil, ""]) }
     scope :with_homepage, -> { where.not(homepage: [nil, ""]) }
 
-    def self.update_has_scraper
-        orgs = Organisation.where(organisation_name: [
-            "CodeClan", 
-            "2i Testing",
-            "Airts",
-            "deltaDNA",
-            "AutoRek",
-            "Gecko Engage",
-            "Tesco Bank",
-            "BBI Group",
-            "Bad Dinosaur",
-            "Deliveroo (formerly Cultivate Software Ltd)",
-            "80 Days",
-            "Craneware",
-            "Moon Collider (Kytheria.AI)",
-            "Dufrain"
-        ])
-
-        orgs.each do |org|
-            org.has_scraper = true
-            org.save!
-        end
-    end
-
     def self.linkedin_job_urls
         orgs = Organisation.all
 
