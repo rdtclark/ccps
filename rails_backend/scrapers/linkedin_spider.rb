@@ -34,7 +34,7 @@ class LinkedinSpider < Kimurai::Base
 
             details_url = element.css('a').first["href"]
 
-            Job.where(title: title).first_or_create(
+            Job.where(organisation_id: org_id, title: title).first_or_create(
                 organisation_id: 58,
                 title: title,
                 location: location,
