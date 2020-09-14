@@ -16,6 +16,7 @@ const JobList = ({jobs}) => {
             title={job.title}
             job_link={job.details_url}
             org_name={job.organisation_name}
+            loc={job.location}
             />
         ) 
     })

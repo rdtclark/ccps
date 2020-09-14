@@ -1,7 +1,7 @@
 /* Table adjustments */
 .col-width{
     width: 200px;
-
+    text-align: left;
 }
 
 #tbody-center {

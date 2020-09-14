@@ -10,7 +10,13 @@
 }
 
 .subtext{
-    color: rgb(185, 185, 185);
+    color: rgb(212, 212, 212);
+    text-indent: 10px;
+}
+
+.subtext-loc{
+    color: rgb(168, 168, 168);
+    text-indent: 10px;
 }
 
 #button {

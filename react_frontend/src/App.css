@@ -9,7 +9,7 @@
 
 .partners{
   display: flex;
-  flex: 4;
+  flex: 1;
   overflow-y: scroll;
   justify-content: space-between;
   align-items: left;
@@ -20,7 +20,7 @@
 
 .jerbs{
   display: flex;
-  flex: 3;
+  flex: 1;
   overflow-y: scroll;
   justify-content: space-between;
   align-items: right;

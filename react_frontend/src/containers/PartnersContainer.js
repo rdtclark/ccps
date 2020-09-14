@@ -30,6 +30,8 @@ class PartnersContainer extends React.Component {
         return this.state.org_info.map((org, index) => {
             const {id, organisation_name, homepage, about, job_page_url, linkedin, open_to_spec_app} = org
 
+
+            // saving icons as variables so the table content in the return is easier to read
             const linkedin_icon = linkedin ? <FontAwesomeIcon icon={ faLinkedin }></FontAwesomeIcon> : null
             const open_to_spec = open_to_spec_app ? <FontAwesomeIcon icon={ faCheck }></FontAwesomeIcon> : null
             const job_url_icon = job_page_url ? <FontAwesomeIcon icon={ faBriefcase }></FontAwesomeIcon> : null
