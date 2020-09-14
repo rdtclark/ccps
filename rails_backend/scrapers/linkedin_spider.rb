@@ -30,6 +30,9 @@ class LinkedinSpider < Kimurai::Base
         # find the correct Organisation
         org = Organisation.find(org_id)
 
+        browser.execute_script("window.scrollBy(0,10000)") ; sleep 2
+        response = browser.current_response
+
         returned_jobs = response.css('ul.jobs-search__results-list')
 
         jobs_count = returned_jobs.css('li').count
