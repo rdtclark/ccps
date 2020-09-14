@@ -1,2 +1,2 @@
-ccps-backend=rails_backend
-ccps-frontend=react_frontend
+backend=rails_backend
+frontend=react_frontend
