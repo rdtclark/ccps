@@ -1,5 +1,8 @@
 import React from 'react';
 import Job from './Job';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
+
 
 
 const JobList = ({jobs}) => {
@@ -27,7 +30,7 @@ const JobList = ({jobs}) => {
 
         <>
         <div>
-        <h1>Current Jerbs </h1>
+        <h1><span className="font-in"><b>Scraped</b></span><FontAwesomeIcon icon={ faLinkedin }></FontAwesomeIcon></h1>
         <sup><button id="counter"><b>{all_jobs.length}</b></button></sup>
         </div>
         <ul>{all_jobs}</ul>
