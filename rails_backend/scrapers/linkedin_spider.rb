@@ -16,7 +16,7 @@ class LinkedinSpider < Kimurai::Base
     @config = {
         disable_images: true,
         before_request: {
-            delay: 3..31
+            delay: 1..2
         }
     }
 
