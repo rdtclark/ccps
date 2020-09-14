@@ -1,0 +1,4 @@
+https://github.com/heroku/heroku-buildpack-apt
+https://github.com/heroku/heroku-buildpack-google-chrome
+https://github.com/heroku/heroku-buildpack-chromedriver
+https://github.com/heroku/heroku-buildpack-ruby.git
