@@ -1,3 +1,4 @@
+
 .col-width{
     width: 200px;
 
@@ -5,4 +6,12 @@
 
 #tbody-center {
     text-align: center;
+}
+
+table {
+    border-spacing: 1em;
+}
+
+thead {
+    font-size: 24px;
 }
