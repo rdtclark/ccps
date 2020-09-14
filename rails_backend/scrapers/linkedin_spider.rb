@@ -32,6 +32,7 @@ class LinkedinSpider < Kimurai::Base
 
         browser.execute_script("window.scrollBy(0,10000)") ; sleep 2
         response = browser.current_response
+        browser.refresh
 
         returned_jobs = response.css('ul.jobs-search__results-list')
 
