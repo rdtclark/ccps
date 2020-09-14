@@ -11,11 +11,11 @@ end
 class LinkedinSpider < Kimurai::Base
     @name = "linkedin_spider"
     @engine = :selenium_chrome
-    @start_urls = Organisation.linkedin_job_urls.sample(20)
+    @start_urls = Organisation.linkedin_job_urls
     @config = {
         disable_images: true,
         before_request: {
-            delay: 3..6
+            delay: 3..31
         }
     }
 
