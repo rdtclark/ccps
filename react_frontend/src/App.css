@@ -1,53 +1,10 @@
-/* .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */
-
-
-/* // ^^^^ everything above is default from react */
-
-
-
-
+/* Separating Containers and enabling scroll for each */
 .container {
   display: flex;
   flex-direction: row;
   background-color: rgb(94, 94, 94);
   color: white;
+  font-family: Jost;
 }
 
 .partners{
@@ -71,69 +28,15 @@
   height: 120vh;
 }
 
-.no-blt{
-  list-style-type: none;
-}
 
-.btn-r{
-  float: right;
-}
 
-li{
-  margin: 3em 0;
-}
 
-a:link{
-  transition-duration: 0.4s;
-  text-decoration: none;
-  color: rgb(99, 172, 214);
-}
 
-a:visited{
-  color: rgb(96, 132, 209);
-  background-color: rgb(96, 132, 209);
-  text-shadow: 0px 0px 2px rgb(255, 255, 255);
-}
 
-a:hover{
-  color: white;
-}
 
-#button {
-  transition-duration: 0.4s;
-  border: none;
-  background-color: rgb(0, 153, 255);
-  color: white;
-  padding: 15px 32px;
-  margin: 0px 0px 0px 0px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  border-radius: 5px;
-}
 
-#button:hover {
-  background-color: rgb(255, 255, 255);
-  box-shadow: 0px 0px 5px white;
-  color: rgb(0, 77, 128);
-  text-shadow: 0px 0px 1px black;
-}
 
 h1{
   display: inline-block;
 }
 
-#counter {
-  border: none;
-  background-color: rgb(0, 153, 255);
-  color: white;
-  padding: 5px 12px;
-  margin: 0px 0px 0px 30px;
-  text-align: center;
-  display: inline-block;
-  border-radius: 5px;
-}
-
-.subtext{
-  color: rgb(185, 185, 185);
-}

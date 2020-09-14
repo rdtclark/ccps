@@ -15,6 +15,7 @@ const JobList = ({jobs}) => {
             <Job
             title={job.title}
             job_link={job.details_url}
+            org_name={job.organisation_name}
             />
         ) 
     })
@@ -27,7 +28,7 @@ const JobList = ({jobs}) => {
         <>
         <div>
         <h1>Current Jerbs </h1>
-        <button id="counter"><b>{all_jobs.length}</b></button>
+        <sup><button id="counter"><b>{all_jobs.length}</b></button></sup>
         </div>
         <ul>{all_jobs}</ul>
         </>

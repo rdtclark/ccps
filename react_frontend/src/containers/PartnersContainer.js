@@ -4,7 +4,7 @@ import './PartnersContainer.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faPooStorm, faInfo, faBriefcase, faCheck, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
-import Table from 'react-bootstrap/Table';
+//import Table from 'react-bootstrap/Table';
 
 
 
@@ -52,10 +52,10 @@ class PartnersContainer extends React.Component {
         return(
             <>
                 <div>
-                    <h2>
+                    <h1>
                         CodeClan_ Partners
-                    </h2>
-                    <Table hover>
+                    </h1>
+                    <table>
                         <thead>
                             <tr>
                                 <th>Organisation</th>
@@ -68,7 +68,7 @@ class PartnersContainer extends React.Component {
                         <tbody>
                             {this.renderTableData()}
                         </tbody>
-                    </Table>
+                    </table>
                 </div>
             </>
         )
