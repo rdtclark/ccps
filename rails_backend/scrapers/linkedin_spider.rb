@@ -30,6 +30,7 @@ class LinkedinSpider < Kimurai::Base
         # find the correct Organisation
         org = Organisation.find(org_id)
 
+        browser.refresh
         jobs = browser.find(:css, 'ul.jobs-search__results-list', wait: 10)
 
         # browser.execute_script("window.scrollBy(0,10000)") ; sleep 2
