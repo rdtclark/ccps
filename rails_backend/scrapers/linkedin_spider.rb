@@ -33,8 +33,6 @@ class LinkedinSpider < Kimurai::Base
         returned_jobs = response.css('ul.jobs-search__results-list')
 
         jobs_count = returned_jobs.css('li').count
-
-        binding.pry
         
         returned_jobs.css('li').each do |element|
 
