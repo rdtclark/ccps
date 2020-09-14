@@ -1,11 +1,8 @@
 import React from 'react';
-import OrganisationList from '../components/OrganisationList';
 import './PartnersContainer.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faPooStorm, faInfo, faBriefcase, faCheck, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
-//import Table from 'react-bootstrap/Table';
-
 
 
 class PartnersContainer extends React.Component {

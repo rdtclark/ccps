@@ -1,6 +1,5 @@
 import React from 'react';
 import Job from './Job';
-//import Badge from 'react-bootstrap/Badge';
 
 
 const JobList = ({jobs}) => {
