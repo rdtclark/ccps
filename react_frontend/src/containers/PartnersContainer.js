@@ -52,7 +52,7 @@ class PartnersContainer extends React.Component {
             <>
                 <div>
                     <h1>
-                        CodeClan_ Partners
+                        Employers
                     </h1>
                     <table>
                         <thead>

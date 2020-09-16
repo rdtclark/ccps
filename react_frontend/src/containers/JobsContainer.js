@@ -42,7 +42,7 @@ class JobsContainer extends React.Component {
     render() {
         return(
             <div>
-                <JobFilter jobs={this.state.filteredJobs} match={this.props.match} onChange={this.filterJobs}></JobFilter>
+                {/* <JobFilter jobs={this.state.filteredJobs} match={this.props.match} onChange={this.filterJobs}></JobFilter> */}
 
                 <JobList jobs={this.state.jobs}/>
             </div>
