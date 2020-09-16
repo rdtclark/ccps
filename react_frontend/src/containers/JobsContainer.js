@@ -1,6 +1,7 @@
 import React from 'react';
 import JobFilter from '../components/JobFilter';
 import JobList from '../components/JobList';
+import { API_BASE_URL } from '../constants';
 import './JobsContainer.css'
 
 class JobsContainer extends React.Component {
@@ -14,7 +15,7 @@ class JobsContainer extends React.Component {
     }
 
     componentDidMount(){
-        const job_url = 'http://localhost:3000/jobs'
+        const job_url = API_BASE_URL + "/jobs"
         fetch(job_url)
         .then(res => res.json())
         .then(data => this.setState({jobs: data}))

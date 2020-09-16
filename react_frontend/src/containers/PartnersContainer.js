@@ -3,6 +3,7 @@ import './PartnersContainer.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faPooStorm, faInfo, faBriefcase, faCheck, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
+import { API_BASE_URL } from '../constants';
 
 
 class PartnersContainer extends React.Component {
@@ -15,7 +16,7 @@ class PartnersContainer extends React.Component {
     }
 
     componentDidMount(){
-        const org_url = 'http://localhost:3000/organisations'
+        const org_url = API_BASE_URL + "/organisations"
         fetch(org_url)
         .then(res => res.json())
         .then(data => this.setState({org_info: data}))
