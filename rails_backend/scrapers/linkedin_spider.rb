@@ -11,11 +11,10 @@ end
 class LinkedinSpider < Kimurai::Base
     @name = "linkedin_spider"
     @engine = :selenium_chrome
-    #@start_urls = Organisation.linkedin_job_urls
-    @start_urls = ["https://uk.linkedin.com/jobs/search?keywords=%22Sopra%20Steria%22&location=Edinburgh%2C%20Scotland%2C%20United%20Kingdom&geoId=100209086&trk=public_jobs_jobs-search-bar_search-submit&id=216&redirect=false&position=1&pageNum=0"]
+    @start_urls = Organisation.linkedin_job_urls
+    #@start_urls = ["https://uk.linkedin.com/jobs/search?keywords=%22Sopra%20Steria%22&location=Edinburgh%2C%20Scotland%2C%20United%20Kingdom&geoId=100209086&trk=public_jobs_jobs-search-bar_search-submit&id=216&redirect=false&position=1&pageNum=0"]
     @config = {
         disable_images: true,
-        #proxy: "localhost:5566:http",
         before_request: {
             delay: 1..2
         }
@@ -30,8 +29,6 @@ class LinkedinSpider < Kimurai::Base
 
         # find the correct Organisation
         org = Organisation.find(org_id)
-
-        # jobs = browser.find(:css, 'ul.jobs-search__results-list', wait: 10)
 
         returned_jobs = response.css('ul.jobs-search__results-list')
 

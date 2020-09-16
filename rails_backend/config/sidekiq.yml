@@ -7,7 +7,7 @@
     
     :schedule:
       scraper_webuy:
-        # At every 43rd minute past every hour from 9 through 17 on every day-of-week from Monday through Saturday
+        # at 7am every day
         cron: '0 7 * * *'
         queue: scheduler
         enabled: true
