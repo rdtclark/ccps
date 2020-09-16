@@ -32,7 +32,29 @@
 
 
 
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
 
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #555555;
+
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(170, 170, 170);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(255, 255, 255);
+  cursor: pointer;
+
+}
 
 
 
