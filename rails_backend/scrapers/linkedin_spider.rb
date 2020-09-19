@@ -11,7 +11,7 @@ end
 class LinkedinSpider < Kimurai::Base
     @name = "linkedin_spider"
     @engine = :selenium_chrome
-    @start_urls = Organisation.linkedin_job_urls.sample(50)
+    @start_urls = Organisation.linkedin_job_urls.sample(150)
     #@start_urls = ["https://uk.linkedin.com/jobs/search?keywords=%22Sopra%20Steria%22&location=Edinburgh%2C%20Scotland%2C%20United%20Kingdom&geoId=100209086&trk=public_jobs_jobs-search-bar_search-submit&id=216&redirect=false&position=1&pageNum=0"]
     @config = {
         user_agent: "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.84 Safari/537.36",
