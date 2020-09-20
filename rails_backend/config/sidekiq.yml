@@ -8,7 +8,7 @@
     :schedule:
       scraper_webuy:
         # at 7am every day
-        cron: '0 7 * * *'
+        cron: '0 2 * * *'
         queue: scheduler
         enabled: true
         class: ScrapeLinkedin
