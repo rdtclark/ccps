@@ -6,7 +6,9 @@ class ScrapeLinkedin
 
   def perform
     # Delete all jobs older than 14 days
-    Job.delete_all("created_at < ?', '#{14.days.ago}'")
+    Job.where('created_at < ?', 14.days.ago).each do |job|
+      job.destroy
+    end
 
     # run the spider
     LinkedinSpider.crawl!
