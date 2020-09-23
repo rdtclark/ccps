@@ -15,7 +15,7 @@ class LinkedinSpider < Kimurai::Base
     @config = {
         user_agent: "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.84 Safari/537.36",
         disable_images: true,
-        proxy: "station36.com:8787:http",
+        proxy: Rails.application.credentials.res_proxy[:address],
         before_request: {
             delay: 5..44
         }
