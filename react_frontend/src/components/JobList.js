@@ -30,7 +30,7 @@ const JobList = ({jobs}) => {
 
         <>
         <div>
-        <h1>Jobs</h1>
+        <h1 className="title-in">Jobs</h1>
         <sup><button id="counter"><b>{all_jobs.length}</b></button></sup>
         </div>
         <ul>{all_jobs}</ul>
