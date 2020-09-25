@@ -11,7 +11,7 @@ end
 class LinkedinSpider < Kimurai::Base
     @name = "linkedin_spider"
     @engine = :selenium_chrome
-    @start_urls = Organisation.linkedin_job_urls.sample(15)
+    @start_urls = Organisation.linkedin_job_urls.sample(150)
     @config = {
         user_agent: "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.84 Safari/537.36",
         disable_images: true,
