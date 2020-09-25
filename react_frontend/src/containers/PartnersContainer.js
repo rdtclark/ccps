@@ -2,7 +2,7 @@ import React from 'react';
 import './PartnersContainer.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import { faPooStorm, faInfo, faBriefcase, faCheck, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
+import { faInfo, faBriefcase, faCheck } from '@fortawesome/free-solid-svg-icons';
 import { API_BASE_URL } from '../constants';
 
 
@@ -38,10 +38,10 @@ class PartnersContainer extends React.Component {
             return (
                 <tr key={id} className="table">
 
-                    <th className="col-width"><a href={homepage} target="_blank">{organisation_name}</a></th>
-                    <td id="tbody-center"><a href={about} target="_blank">{abouticon}</a></td>
-                    <td id="tbody-center"><a href={job_page_url} target="_blank">{job_url_icon}</a></td>
-                    <td id="tbody-center"><a href={linkedin} target="_blank">{linkedin_icon}</a></td>
+                    <th className="col-width"><a href={homepage} target="_blank" rel="noopener noreferrer">{organisation_name}</a></th>
+                    <td id="tbody-center"><a href={about} target="_blank" rel="noopener noreferrer">{abouticon}</a></td>
+                    <td id="tbody-center"><a href={job_page_url} target="_blank" rel="noopener noreferrer">{job_url_icon}</a></td>
+                    <td id="tbody-center"><a href={linkedin} target="_blank" rel="noopener noreferrer">{linkedin_icon}</a></td>
                     <td id="tbody-center">{open_to_spec}</td>
                 </tr>
             )
