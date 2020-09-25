@@ -17,7 +17,7 @@ class LinkedinSpider < Kimurai::Base
         disable_images: true,
         proxy: Rails.application.credentials.res_proxy[:address],
         before_request: {
-            delay: 5..44
+            delay: 5..8
         }
     }
 

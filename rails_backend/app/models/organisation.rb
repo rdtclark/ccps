@@ -17,7 +17,7 @@ class Organisation < ApplicationRecord
             ## f_I= Industry
             # 2C96 = Information Technology & Services
             # 4 = Computer Software
-            url = "https://uk.linkedin.com/jobs/search?f_I=4%2C96&keywords=%22#{param}%22&location=Scotland%2C%20United%20Kingdom&geoId=100209086&trk=public_jobs_jobs-search-bar_search-submit&id=#{org_id}&redirect=false&position=1&pageNum=0"
+            url = "https://uk.linkedin.com/jobs/search?f_I=4%2C96&keywords=%22#{param}%22&location=Scotland%2C%20United%20Kingdom&geoId=&trk=public_jobs_jobs-search-bar_search-submit&id=#{org_id}&redirect=false&position=1&pageNum=0"
             job_urls << url
         end
 
