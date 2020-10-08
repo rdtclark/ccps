@@ -14,7 +14,9 @@ function App() {
     //   <JobsContainer/>
     //   </div>
     // </div>
+    <div className="container">
     <Main />
+    </div>
   );
 }
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import JobFilter from '../components/JobFilter';
+// import JobFilter from '../components/JobFilter';
 import JobList from '../components/JobList';
 import { API_BASE_URL } from '../constants';
 import './JobsContainer.css'

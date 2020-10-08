@@ -1,7 +1,6 @@
 import React from 'react';
 import Job from './Job';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
+
 
 
 
