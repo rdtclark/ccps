@@ -1,10 +1,13 @@
 import React from 'react';
 
-const Job = ({title, job_link}) => {
+const Job = ({title, job_link, org_name, loc}) => {
 
     return (
         <>
-        <li><a href={job_link}>{title}</a></li>
+        <li className="no-blt"><b>{org_name}</b> <a href={job_link} target="_blank" rel="noopener noreferrer" className="btn-r" id="button"><span>View Job</span></a>
+        <div className="subtext">{title}</div>
+        <div className="subtext-loc">{loc}</div>
+        </li>
         </>
     )
 }

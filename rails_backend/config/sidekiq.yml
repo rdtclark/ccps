@@ -1,0 +1,14 @@
+---
+    :concurrency: 1
+    :queues:
+      - default
+      - mailers
+      - scheduler
+    
+    :schedule:
+      scraper_webuy:
+        # at 2am every day
+        cron: '0 2 * * *'
+        queue: scheduler
+        enabled: true
+        class: ScrapeLinkedin

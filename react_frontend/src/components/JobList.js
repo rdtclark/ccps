@@ -1,5 +1,9 @@
 import React from 'react';
 import Job from './Job';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
+
+
 
 const JobList = ({jobs}) => {
 
@@ -13,15 +17,22 @@ const JobList = ({jobs}) => {
             <Job
             title={job.title}
             job_link={job.details_url}
+            org_name={job.organisation_name}
+            loc={job.location}
             />
         ) 
     })
     console.log(all_tags.flat());
 
+
+
     return(
 
         <>
-        <h2>Current Jerbs</h2>
+        <div>
+        <h1 className="title-in">Jobs</h1>
+        <sup><button id="counter"><b>{all_jobs.length}</b></button></sup>
+        </div>
         <ul>{all_jobs}</ul>
         </>
     )

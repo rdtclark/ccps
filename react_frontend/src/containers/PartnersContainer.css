@@ -1,8 +1,37 @@
+/* Table adjustments */
 .col-width{
     width: 200px;
-
+    text-align: left;
 }
 
 #tbody-center {
     text-align: center;
+}
+
+
+table {
+    border-spacing: 1em;
+}
+
+thead {
+    font-size: 24px;
+}
+
+
+/* styling for hovering over links and visited links */
+
+a:link{
+    transition-duration: 0.4s;
+    text-decoration: none;
+    color: rgb(116, 193, 238);
+}
+
+a:visited{
+    color: rgb(96, 132, 209);
+    background-color: rgb(96, 132, 209);
+    text-shadow: 0px 0px 2px rgb(255, 255, 255);
+}
+
+a:hover{
+    color: white;
 }

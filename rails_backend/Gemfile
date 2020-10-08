@@ -12,9 +12,9 @@ gem 'kimurai'
 gem 'sidekiq'
 gem 'sidekiq-scheduler'
 gem 'rack-cors'
+gem "pry-rails"
 
 group :development, :test do
-  gem "pry-rails"
 end
 
 group :development do
