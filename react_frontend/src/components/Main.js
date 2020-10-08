@@ -1,0 +1,34 @@
+import React, {Component} from "react";
+import PartnersContainer from '../containers/PartnersContainer';
+import JobsContainer from '../containers/JobsContainer';
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+
+
+class Main extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+
+        }
+    }
+
+
+    render() {
+        return (
+            <Router>
+                <React.Fragment>
+                    {/* <NavBar /> */}
+                    <Switch>
+                        <Route exact path="/organisations" component={PartnersContainer}/>
+                        <div className="jerbs">
+                        <Route exact path="/jobs" component={JobsContainer}/>
+                        </div>
+                        {/* <Route component={ErrorPage}/> */}
+                    </Switch>
+                </React.Fragment>
+            </Router>
+        )
+    }
+}
+
+export default Main; 
