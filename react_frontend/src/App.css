@@ -1,15 +1,15 @@
 /* Separating Containers and enabling scroll for each */
 .container {
-  display: flex;
+  /* display: flex; */
   flex-direction: row;
   background-color: rgb(94, 94, 94);
   background-repeat: repeat;
   color: white;
   font-family: Jost;
-  height: 3000px;
+  height: 30000px;
 }
 
-.partners{
+/* .partners{
   display: flex;
   flex: 1;
   overflow-y: scroll;
@@ -18,9 +18,9 @@
   padding: 10px 10px 10px 30px;
   height: 100vh;
 
-}
+} */
 
-.jerbs{
+/* .jerbs{
   display: flex;
   flex: 1;
   overflow-y: scroll;
@@ -28,7 +28,7 @@
   align-items: right;
   padding: 10px 30px 10px 10px;
   height: 100vh;
-}
+} */
 
 
 

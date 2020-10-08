@@ -52,10 +52,10 @@ class PartnersContainer extends React.Component {
         return(
             <>
                 <div>
-                    <h1>
+                    <h1 className="title-in">
                         Employers
                     </h1>
-                    <table>
+                    <table className="table-pos">
                         <thead>
                             <tr>
                                 <th>Organisation</th>
