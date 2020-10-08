@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import PartnersContainer from '../containers/PartnersContainer';
 import JobsContainer from '../containers/JobsContainer';
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import NavBar from '../components/NavBar';
 
 
 class Main extends Component {
@@ -17,12 +18,11 @@ class Main extends Component {
         return (
             <Router>
                 <React.Fragment>
-                    {/* <NavBar /> */}
+                    <NavBar />
                     <Switch>
+                        {/* <Route exact path="/" component={Home}/> */}
                         <Route exact path="/organisations" component={PartnersContainer}/>
-                        <div className="jerbs">
                         <Route exact path="/jobs" component={JobsContainer}/>
-                        </div>
                         {/* <Route component={ErrorPage}/> */}
                     </Switch>
                 </React.Fragment>
