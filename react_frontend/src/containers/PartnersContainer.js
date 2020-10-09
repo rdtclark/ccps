@@ -11,7 +11,8 @@ class PartnersContainer extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            org_info: []
+            org_info: [],
+            // employersWithVacancies: {}
         }
     }
 
@@ -23,6 +24,23 @@ class PartnersContainer extends React.Component {
     }
 
     
+    calculateEmployersWithVacancies() {
+        let counter = 0
+
+        return this.state.org_info.map(org => {
+            const {vacancies_listed} = org
+            
+            if (vacancies_listed === true) {
+                return counter += 1
+            } else {
+                return counter += 0
+            }
+        })
+    }
+
+
+
+
 
     renderTableData() {
         return this.state.org_info.map((org, index) => {
@@ -33,13 +51,17 @@ class PartnersContainer extends React.Component {
             const linkedin_icon = linkedin ? <FontAwesomeIcon icon={ faLinkedin }></FontAwesomeIcon> : null
             const open_to_spec = open_to_spec_app ? <FontAwesomeIcon icon={ faCheck }></FontAwesomeIcon> : null
             const job_url_icon = job_page_url ? <FontAwesomeIcon icon={ faBriefcase }></FontAwesomeIcon> : null
-            const abouticon = about ? <FontAwesomeIcon icon={ faInfo }></FontAwesomeIcon> : null
+            const about_icon = about ? <FontAwesomeIcon icon={ faInfo }></FontAwesomeIcon> : null
 
             return (
                 <tr key={id} className="table">
 
-                    <th className="col-width"><a href={homepage} target="_blank" rel="noopener noreferrer">{organisation_name}</a></th>
-                    <td id="tbody-center"><a href={about} target="_blank" rel="noopener noreferrer">{abouticon}</a></td>
+                    <th className="col-width">
+                        <a href={homepage} target="_blank" rel="noopener noreferrer">{organisation_name}</a>
+                        {/* <sup><button id="counter"><b>{all_jobs.length}</b></button></sup> */}
+                    </th>
+
+                    <td id="tbody-center"><a href={about} target="_blank" rel="noopener noreferrer">{about_icon}</a></td>
                     <td id="tbody-center"><a href={job_page_url} target="_blank" rel="noopener noreferrer">{job_url_icon}</a></td>
                     <td id="tbody-center"><a href={linkedin} target="_blank" rel="noopener noreferrer">{linkedin_icon}</a></td>
                     <td id="tbody-center">{open_to_spec}</td>
@@ -53,7 +75,7 @@ class PartnersContainer extends React.Component {
             <>
                 <div>
                     <h1 className="title-in">
-                        Employers
+                        Employers {this.calculateEmployersWithVacancies()}
                     </h1>
                     <table className="table-pos">
                         <thead>
