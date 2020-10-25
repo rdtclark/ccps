@@ -1,5 +1,6 @@
 import React from "react";
 import './Home.css';
+import '../App.css'
 
 const Home = () => (
     <div className="title">
