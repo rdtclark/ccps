@@ -75,7 +75,7 @@ class PartnersContainer extends React.Component {
             <>
                 <div>
                     <h1 className="title-in">
-                        Employers {this.calculateEmployersWithVacancies()}
+                         Employers {/*{this.calculateEmployersWithVacancies()} */}
                     </h1>
                     <table className="table-pos">
                         <thead>
