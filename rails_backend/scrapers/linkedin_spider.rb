@@ -9,14 +9,15 @@ Kimurai.configure do |config|
 end
 
 class LinkedinSpider < Kimurai::Base
-  PROXIES = [Rails.application.credentials.res1_proxy[:address], Rails.application.credentials.res2_proxy[:address]]
+  # PROXIES = [Rails.application.credentials.res1_proxy[:address], Rails.application.credentials.res2_proxy[:address]]
   @name = "linkedin_spider"
   @engine = :selenium_chrome
   @start_urls = Organisation.linkedin_job_urls.sample(150)
   @config = {
     user_agent: "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.84 Safari/537.36",
     disable_images: true,
-    proxy: -> { PROXIES.sample },
+    # proxy: -> { PROXIES.sample },
+    proxy: Rails.application.credentials.res3_proxy[:address],
     session: {
       recreate_driver_if: {
         # Restart browser if provided memory limit (in kilobytes) is exceeded:
